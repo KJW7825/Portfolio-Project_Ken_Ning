@@ -278,6 +278,30 @@ will likely refine your design to make your implementation easier to use.
       Answer, explain, and give at least one example:
       - I am not sure about this.
 
+## UPDATE 2/25/2026
+## NEW Component Design
+- Component Design #4: PIDController
+  - **Description**:
+    - This component models a Proportional-Integral-Derivative (PID) controller used in robotics. It calculates the necessary adjustment (output) to keep a system (like a drone's height) at a target setpoint.
+  - **Kernel Methods**:
+    - `void setTarget(double setpoint)`: Sets the desired value the system should reach.
+    - `void updateActual(double currentReading)`: Inputs the latest sensor data into the controller.
+    - `void setGains(double kp, double ki, double kd)`: Configures the sensitivity of the P, I, and D terms.
+  - **Secondary Methods**:
+    - `double calculateCorrection()`: Computes the final motor adjustment value based on the error.
+    - `void resetErrors()`: Clears the accumulated integral error to prevent "windup."
+    - `boolean atTarget(double tolerance)`: Checks if the system is close enough to the goal.
+  - **Additional Considerations**:
+    - Would this component be mutable? Answer and explain:
+      - Yes. [cite_start]The controller's internal error history and gain settings change as the system runs[cite: 107].
+    - Would this component rely on any internal classes (e.g., `Map.Pair`)? Answer and explain:
+      - [cite_start]No. It uses primitive double values for calculations[cite: 110].
+    - Would this component need any enums or constants (e.g., `Program.Instruction`)? Answer and explain:
+      - Yes. It might use a `LIMIT` constant to prevent the motor output from exceeding safe ranges.
+    - Can you implement your secondary methods using your kernel methods? Answer, explain, and give at least one example:
+      - Yes. [cite_start]`atTarget()` uses `updateActual()` to check the difference between the setpoint and the current value against a tolerance[cite: 114].
+
+
 ## Post-Assignment
 
 The following sections detail everything that you should do once you've
