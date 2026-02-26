@@ -1,6 +1,5 @@
 # Portfolio Part 1: Component Brainstorming
 
-<<<<<<< HEAD
 - **Name**: Ken Ning
 - **Dot Number**: ning.137
 - **Due Date**: 2/6/2026
@@ -8,14 +7,6 @@
 ## Assignment Overview
 
 
-=======
-- **Name**: <!-- TODO: fill with first and last name (e.g., Brutus Buckeye) then delete this comment -->Chongxiao Jiang
-- **Dot Number**: <!-- TODO: fill with OSU dot number (e.g., buckeye.17) then delete this comment -->jaing.3185
-- **Due Date**: <!-- TODO: fill with due date and time (e.g., 10/17 @ 3:10 PM EST) then delete this comment -->Feb 6
-
-## Assignment Overview
-
->>>>>>> 660569876f10ac69cf8f7bc23b4a91a811482b54
 The overall goal of the portfolio project is to have you design and implement
 your own OSU component. There are no limits to what you choose to design and
 implement, but your component must fit within the constraints of our software
@@ -37,11 +28,6 @@ implement.
 
 ## Assignment Checklist
 
-<<<<<<< HEAD
-
-
-=======
->>>>>>> 660569876f10ac69cf8f7bc23b4a91a811482b54
 To be sure you have completed everything on this assignment, we have littered
 this document with TODO comments. You can browse all of them in VSCode by
 opening the TODOs window from the sidebar. The icon looks like a tree and will
@@ -63,10 +49,6 @@ to the tree diagram (you may remove this one as well):
 
 ## Assignment Learning Objectives
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 660569876f10ac69cf8f7bc23b4a91a811482b54
 Without learning objectives, there really is no clear reason why a particular
 assessment or activity exists. Therefore, to be completely transparent, here is
 what we're hoping you will learn through this particular aspect of the portfolio
@@ -80,10 +62,6 @@ project. Specifically, students should be able to:
 
 ## Assignment Rubric: 10 Points
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 660569876f10ac69cf8f7bc23b4a91a811482b54
 Again, to be completely transparent, most of the portfolio project, except the
 final submission, is designed as a formative assessment. Formative assessments
 are meant to provide ongoing feedback in the learning process. Therefore,
@@ -121,31 +99,17 @@ Below is further rationale/explanation for the rubric items above:
 > brainstorming. Plus it helps us get to know you better! Feel free to share
 > images in this section.
 
-<<<<<<< HEAD
-I am very interested in game development and system architecture. As an experienced Minecraft player, I aim to design and implement Java components related to Minecraft's game mechanics, with the goal of demonstrating their functionality within the game itself.
-
-
-## Assignment
-
-
-
-=======
 I am interested in chip design, aircrafts and electric vehicles.
 Alsi, I like playing video games, especially open-world games such as Genshin and GTA.
 
 ## Assignment
 
->>>>>>> 660569876f10ac69cf8f7bc23b4a91a811482b54
 As previously stated, you are tasked with brainstorming 3 possible components.
 To aid you in this process, we have provided [some example components][example-components]
 that may help you in your brainstorming. All of these components were made at
 some point by one of your peers, so you should feel confident that you can
 accomplish any of them.
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 660569876f10ac69cf8f7bc23b4a91a811482b54
 There is no requirement that you use any of the components listed above.
 If you want to model something else, go for it! Very common early object
 projects usually attempt to model real-world systems like banks, cars,
@@ -165,10 +129,6 @@ about different ways you might allow a client to manipulate your component.
 
 ### Example Component
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 660569876f10ac69cf8f7bc23b4a91a811482b54
 To help you brainstorm a few components, we've provided an example below of a
 component you already know well: NaturalNumber. We highly recommend that you
 mirror the formatting as close as possible in your designs. By following this
@@ -233,70 +193,6 @@ will likely refine your design to make your implementation easier to use.
 
 ### Component Designs
 
-<<<<<<< HEAD
-- Component Design #1: CraftingTable
-  - **Description**:
-    - This component models the Minecraft 3x3 crafting grid. It manages how items are placed in the grid and checks if the pattern matches a recipe to produce an output.
-  - **Kernel Methods**:
-    - `void setSlot(int row, int col, ItemStack item)`: Places an item in a specific box (row 0-2, col 0-2).
-    - `ItemStack takeSlot(int row, int col)`: Removes and returns the item from a specific box.
-    - `ItemStack viewSlot(int row, int col)`: Looks at the item in a box without moving it.
-  - **Secondary Methods**:
-    - `boolean matches(Recipe r)`: Checks if the current items in the grid match a specific crafting recipe.
-    - `void clear()`: Empties the entire 3x3 grid by taking items out of every box.
-    - `ItemStack craft()`: Returns the result of the synthesis if the pattern is valid.
-  - **Additional Considerations**:
-    - Would this component be mutable? Answer and explain:
-      - Yes. It must be mutable to allow players to add and remove items from the grid during the crafting process.
-    - Would this component rely on any internal classes (e.g., `Map.Pair`)? Answer and explain:
-      - Yes. It uses an `ItemStack` class to keep track of what the item is and how many there are.
-    - Would this component need any enums or constants (e.g., `Program.Instruction`)? Answer and explain:
-      - Yes. It uses a constant `SIZE = 3` to make sure the grid is always a 3x3 square.
-    - Can you implement your secondary methods using your kernel methods? Answer, explain, and give at least one example:
-      - Yes. For example, `clear()` can be made by using a simple loop that calls `takeSlot` for every row and column from 0 to 2.
-
-- Component Design #2: Furnace
-  - **Description**:
-    - This component models a Minecraft furnace. It manages three slots: one for raw material, one for fuel, and one for the finished product.
-  - **Kernel Methods**:
-    - `void put(String type, ItemStack item)`: Puts an item into the "input", "fuel", or "output" slot.
-    - `ItemStack pull(String type)`: Takes the item out of the specified slot.
-    - `int burnTime()`: Reports how many seconds of fuel energy are left.
-  - **Secondary Methods**:
-    - `boolean isReady()`: Checks if there is both raw material and fuel available to start smelting.
-    - `int progress()`: Calculates the current smelting progress as a percentage (0-100%).
-    - `void autoFuel(Inventory inv)`: Automatically grabs fuel from a bag and puts it in the fuel slot if it's empty.
-  - **Additional Considerations**:
-    - Would this component be mutable? Answer and explain:
-      - Yes. The furnace changes state constantly as items are consumed and progress increases.
-    - Would this component rely on any internal classes (e.g., `Map.Pair`)? Answer and explain:
-      - Yes. It relies on the `ItemStack` class to represent the items sitting inside the furnace slots.
-    - Would this component need any enums or constants (e.g., `Program.Instruction`)? Answer and explain:
-      - Yes. It uses a `SlotType` constant to identify which of the three slots is being used.
-    - Can you implement your secondary methods using your kernel methods? Answer, explain, and give at least one example:
-      - Yes. For example, `isReady()` uses kernel methods to check if the "input" slot is not empty and if `burnTime()` is greater than zero.
-
-- Component Design #3: RedstoneLogicGate
-  - **Description**:
-    - This component models redstone logic gates (like AND/OR). It takes power levels from input wires and calculates if the output wire should turn on.
-  - **Kernel Methods**:
-    - `void setPower(int port, int level)`: Sets the signal strength (0-15) for a specific input wire.
-    - `void setMode(String type)`: Sets the gate to behave like an "AND" gate, "OR" gate, etc.
-    - `int outputPower()`: Calculates the final signal strength based on the inputs and mode.
-  - **Secondary Methods**:
-    - `boolean isOn()`: Returns true if the output power is greater than zero.
-    - `void flip(int port)`: A quick switch that turns a wire from 0 to 15, or 15 back to 0.
-    - `String describe()`: Gives a simple text summary like "AND Gate: Input 1 is ON, Output is OFF."
-  - **Additional Considerations**:
-    - Would this component be mutable? Answer and explain:
-      - Yes. The signal levels change whenever a player interacts with a switch or redstone wire.
-    - Would this component rely on any internal classes (e.g., `Map.Pair`)? Answer and explain:
-      - Yes. It may use a `Map` internally to store the power level of each input port.
-    - Would this component need any enums or constants (e.g., `Program.Instruction`)? Answer and explain:
-      - Yes. It uses a constant `MAX = 15` to match Minecraft's maximum redstone signal strength.
-    - Can you implement your secondary methods using your kernel methods? Answer, explain, and give at least one example:
-      - Yes. For example, `flip(port)` checks the current power level using a kernel method and then calls `setPower` to switch it to the opposite value.
-=======
 > Please use this section to share your designs.
 
 - Component Design #1: `MinecraftInventory`
@@ -381,7 +277,6 @@ will likely refine your design to make your implementation easier to use.
     - Can you implement your secondary methods using your kernel methods?
       Answer, explain, and give at least one example:
       - I am not sure about this.
->>>>>>> 660569876f10ac69cf8f7bc23b4a91a811482b54
 
 ## Post-Assignment
 
@@ -390,10 +285,6 @@ completed the assignment.
 
 ### Changelog
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 660569876f10ac69cf8f7bc23b4a91a811482b54
 At the end of every assignment, you should update the
 [CHANGELOG.md](../../CHANGELOG.md) file found in the root of the project folder.
 Since this is likely the first time you've done this, we would recommend
@@ -431,10 +322,7 @@ of development.
 
 ### Submission
 
-<<<<<<< HEAD
-=======
 <!-- TODO: read the submission instructions then delete this comment -->
->>>>>>> 660569876f10ac69cf8f7bc23b4a91a811482b54
 
 If you have completed the assignment using this template, we recommend that
 you convert it to a PDF before submission. If you're not sure how, check out
@@ -444,17 +332,11 @@ all your work is there before submitting. For future assignments, you will
 just be submitting a link to a pull request. This will be the only time
 you have to submit any PDFs.
 
-<<<<<<< HEAD
-
-### Peer Review
-
-=======
 <!-- TODO: upload a PDF of this document and the CHANGELOG to Carmen then delete this comment -->
 
 ### Peer Review
 
 <!-- TODO: review the peer review guidelines then delete this comment -->
->>>>>>> 660569876f10ac69cf8f7bc23b4a91a811482b54
 
 Following the completion of this assignment, you will be assigned three
 students' component brainstorming assignments for review. Your job during the
@@ -481,10 +363,7 @@ If you'd like to give feedback for this assignment (or any assignment, really),
 make use of [this survey][survey]. Your feedback helps make assignments
 better for future students.
 
-<<<<<<< HEAD
-=======
 <!-- TODO: follow the link to share your feedback then delete this comment -->
->>>>>>> 660569876f10ac69cf8f7bc23b4a91a811482b54
 
 [example-components]: https://therenegadecoder.com/code/the-never-ending-list-of-small-programming-project-ideas/
 [markdown-to-pdf-guide]: https://therenegadecoder.com/blog/how-to-convert-markdown-to-a-pdf-3-quick-solutions/
