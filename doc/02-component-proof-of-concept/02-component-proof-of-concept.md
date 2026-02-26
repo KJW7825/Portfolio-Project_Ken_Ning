@@ -109,6 +109,9 @@ Below is further rationale/explanation for the rubric items above:
 > to create a new design. In you do end up picking one at random, you should
 > disclose that here as well.
 
+For my component proof-of-concept, I decided to move forward with the `PIDController` design rather than the `MinecraftInventory`. When evaluating my initial brainstorms, I realized that while a Minecraft inventory is a fun concept, it isn't highly relevant to my major or my long-term career goals in software engineering.
+
+After discussing my options with a friend and reflecting on my previous internship experience in autonomous driving data annotation, I realized that a PID Controller is a much more practical and industry-relevant choice. It directly models real-world engineering and automation problems (like cruise control in autonomous vehicles), making it a stronger, more professional, and more meaningful component to include in my portfolio.
 
 > Once you've argued your choice of design, make a branch in your new repo called
 > something like `proof-of-concept`. There are many ways to do this, but my
