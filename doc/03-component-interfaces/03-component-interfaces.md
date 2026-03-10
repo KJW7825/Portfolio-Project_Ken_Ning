@@ -170,6 +170,10 @@ should look something like this.
 As with the previous assignment, you will share no code here. Instead, create
 your two interface files in `src`, and follow the submission instructions below.
 
+## Design Rationale
+
+I put the most essential actions—setting the gains and calculating the output—in the **Kernel interface** because they are the "must-have" functions for a PID controller to work. The **Enhanced interface** adds helpful "extra" tools like `resetMemory` and status checks. These features make the controller much easier to use because they handle the small details, so the user doesn't have to worry about the complex math behind the scenes.
+
 ## Post-Assignment Tasks
 
 The following sections detail everything that you should do once you've
