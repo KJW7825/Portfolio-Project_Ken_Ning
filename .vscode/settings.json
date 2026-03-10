@@ -21,7 +21,8 @@
     ],
     "java.project.outputPath": "bin",
     "java.project.referencedLibraries": [
-        "lib/**/*.jar"
+        "lib/**/*.jar",
+        "/Users/kensmacbookair/Desktop/components.jar"
     ],
     "java.saveActions.cleanup": true,
     "java.cleanup.actions": [
