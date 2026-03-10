@@ -3,28 +3,19 @@ package components.pidcontroller;
 import components.standard.Standard;
 
 /**
- * The Kernel Interface for the PID Controller. * Think of this as the "Brain"
- * of a car's cruise control. It keeps the car at a steady speed by looking at
- * the current gap (error). * @author Ken Ning * @mathmodel type
- * PIDControllerKernel is modeled by ( kp: real, ki: real, kd: real,
- * integralSum: real, lastError: real )
- *
- * @initially {@code
- * ():
- * ensures this = (0.0, 0.0, 0.0, 0.0, 0.0)
- * }
+ * The Kernel Interface for the PID Controller.
+ * * @author Ken Ning
  */
 public interface PIDControllerKernel extends Standard<PIDController> {
 
     /**
-     * Sets the "personality" of the controller using three tuning knobs.
-     * * @param p Proportional gain: How hard to push based on the CURRENT gap.
-     *
-     * @param i
-     *            Integral gain: How much to push based on PAST mistakes.
-     * @param d
-     *            Derivative gain: How much to brake based on FUTURE
-     *            predictions.
+     * Sets the three main tuning parameters (Gains) for the controller.
+     *  @param p
+     * The Proportional gain - reacts to the CURRENT error
+     *  @param i
+     * The Integral gain - reacts to the sum of PAST errors
+     *  @param d
+     * The Derivative gain - predicts FUTURE error trends
      * @updates this
      * @requires p >= 0 and i >= 0 and d >= 0
      * @ensures this.kp = p and this.ki = i and this.kd = d
@@ -32,15 +23,14 @@ public interface PIDControllerKernel extends Standard<PIDController> {
     void setGains(double p, double i, double d);
 
     /**
-     * Calculates the action to take (like pressing the gas pedal) based on the
-     * current gap. * @param currentError The difference between the target
-     * speed and the actual speed.
-     *
-     * @return The calculated output/action to take.
+     * Calculates the control output based on the current system error.
+     *  @param currentError
+     * The gap between the target value and the actual value
+     * @return The calculated action value to be applied to the system
      * @updates this
-     * @ensures calculateOutput = (this.kp * currentError) + (this.ki *
-     *          (this.integralSum + currentError)) + (this.kd * (currentError -
-     *          this.lastError))
+     * @ensures calculateOutput = (this.kp * currentError) +
+     * (this.ki * (this.integralSum + currentError)) +
+     * (this.kd * (currentError - this.lastError))
      */
     double calculateOutput(double currentError);
 
