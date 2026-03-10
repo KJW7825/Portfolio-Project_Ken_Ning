@@ -5,6 +5,15 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Calendar Versioning](https://calver.org/) of
 the following form: YYYY.0M.0D.
+
+## 2026.02.26
+
+### Added
+
+- Designed a proof of concept for PIDController component
+- Implemented `PIDControllerMVP.java` to demonstrate the separation of kernel state management (gains and memory) and secondary math logic
+- Created a simulated car cruise control test case in the `main` method to prove the component's real-world viability
+
 ## 2026.2.6
 
 ### Added
