@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Calendar Versioning](https://calver.org/) of
 the following form: YYYY.0M.0D.
+## 2026.03.10
+
+### Added
+- Designed the "Brain" (Kernel Interface): Created `PIDControllerKernel` to handle core tasks like adjusting the tuning knobs (Gains) and calculating the output (the "gas pedal" push).
+- Added a "Helper" (Enhanced Interface): Created `PIDController` for extra features like checking current settings and wiping the controller's memory clean.
+- Wrote the "User Manual" (Javadoc): Added clear instructions and rules for every feature to ensure the code is easy to use and error-free.
+- Organized the Files (Package): Put all code into the `components.pidcontroller` package to keep the project neat and professional.
+
+### Updated
+- From Draft to Professional: Refactored the simple simulation from Part 2 into a high-quality, formal design that is easy to expand in the future.
 
 ## 2026.02.26
 
