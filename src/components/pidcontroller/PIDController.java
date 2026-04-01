@@ -2,38 +2,17 @@ package components.pidcontroller;
 
 /**
  * The Enhanced Interface for the PID Controller.
+ *
+ * @author Ken Ning
  */
 public interface PIDController extends PIDControllerKernel {
 
     /**
-     * Wipes the controller's error memory (integral and last error). * @updates
-     * this
+     * Wipes the controller's error memory (integral and last error) back to
+     * zero. The tuning gains (Kp, Ki, Kd) remain unchanged.
      *
-     * @ensures this.integralSum = 0.0 and this.lastError = 0.0
+     * @updates this
      */
     void resetMemory();
 
-    /**
-     * Reports the current Proportional (P) gain setting.
-     *
-     * @return the current value of the kp parameter
-     * @ensures getKp = this.kp
-     */
-    double getKp();
-
-    /**
-     * Reports the current Integral (I) gain setting.
-     *
-     * @return the current value of the ki parameter
-     * @ensures getKi = this.ki
-     */
-    double getKi();
-
-    /**
-     * Reports the current Derivative (D) setting.
-     *
-     * @return the current value of the kd parameter
-     * @ensures getKd = this.kd
-     */
-    double getKd();
 }
