@@ -119,6 +119,14 @@ Below is further rationale/explanation for the rubric items above:
 > discuss how that representation will be restricted (i.e., by convention)
 > and interpreted (i.e., by correspondence).
 
+**Representation Choice & Justification:**
+In creating my kernel implementation, I decided to use a standard primitive Java `double` variable (`kp`, `ki`, `kd`, `accumulator`, `previous`) to represent the kernel because /there are only a limited number of states that need to be held by a PID controller and, therefore, the best way to represent the PID outputs using the simplest possible data structure would be to use primitive types (`double`s) or at a minimum (and in general regardless of the type of data structure).
+
+**Convention (Representation Invariant):**
+According to my conventions, all three tuning gains need to be greater than or equal to `0`, meaning that the following inequalities must hold: `$this.kp >= 0.0 and $this.ki >= 0.0 and $this.kd >= 0.0`.
+
+**Correspondence (Abstraction Function):**
+The mathematics of my PID controller can be matched to the above variables easily; `this.kp` is my current PID tuning constant, `this.ki` is my last involved state with PID function, `this.kd` is my predicted future PID tuning constant, `this.accumulatedError` is the area under the curve between `0` to the time the application was run; and, `this.previousError` contains the previous error used to calculate the derivative of the controlled variable.
 
 > To start making your kernel implementation, make a branch off of main in your
 > new repo called something like `kernel-implementation`. There are many ways to
@@ -141,6 +149,7 @@ Below is further rationale/explanation for the rubric items above:
 > and [here](https://stackoverflow.com/questions/18021888/continue-working-on-a-git-branch-after-making-a-pull-request).
 
 
+
 ## Assignment Tasks
 
 Your primary task for this assignment is to create a kernel implementation that
@@ -157,6 +166,8 @@ below.
 
 The following sections detail everything that you should do once you've
 completed the assignment.
+
+
 
 ### Changelog
 
