@@ -5,6 +5,18 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Calendar Versioning](https://calver.org/) of
 the following form: YYYY.0M.0D.
+
+## 2026.04.01
+
+### Added
+- Designed abstract class `PIDControllerSecondary` for the PIDController component.
+- Implemented secondary method `resetMemory` using only kernel methods.
+- Implemented common `Object` methods (`equals`, `hashCode`, `toString`) based on kernel observer methods.
+
+### Updated
+- Refactored `PIDControllerKernel` to include observer methods (`getKp`, `getKi`, `getKd`) to properly support layered implementations.
+- Removed observer methods from the enhanced interface `PIDController` to adhere to component design principles.
+
 ## 2026.03.10
 
 ### Added
