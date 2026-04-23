@@ -1,8 +1,8 @@
 # Portfolio Part 5: Kernel Implementation
 
-- **Name**: <!-- TODO: fill with first and last name (e.g., Brutus Buckeye) and delete this comment -->
-- **Dot Number**: <!-- TODO: fill with OSU dot number (e.g., buckeye.17) and delete this comment -->
-- **Due Date**: <!-- TODO: fill out with due date and time (e.g., 10/17 @ 3:10 PM EST) and delete this comment -->
+- **Name**: Ken Ning
+- **Dot Number**: ning.137
+- **Due Date**: 4/15/2026
 
 ## Assignment Overview
 
@@ -40,7 +40,6 @@ examples of these.
 
 ## Assignment Checklist
 
-<!-- TODO: browse the checklist then delete this comment -->
 
 To be sure you have completed everything on this assignment, we have littered
 this document with TODO comments. You can browse all of them in VSCode by
@@ -120,7 +119,14 @@ Below is further rationale/explanation for the rubric items above:
 > discuss how that representation will be restricted (i.e., by convention)
 > and interpreted (i.e., by correspondence).
 
-<!-- TODO: select a representation and explain why -->
+**Representation Choice & Justification:**
+In creating my kernel implementation, I decided to use a standard primitive Java `double` variable (`kp`, `ki`, `kd`, `accumulator`, `previous`) to represent the kernel because /there are only a limited number of states that need to be held by a PID controller and, therefore, the best way to represent the PID outputs using the simplest possible data structure would be to use primitive types (`double`s) or at a minimum (and in general regardless of the type of data structure).
+
+**Convention (Representation Invariant):**
+According to my conventions, all three tuning gains need to be greater than or equal to `0`, meaning that the following inequalities must hold: `$this.kp >= 0.0 and $this.ki >= 0.0 and $this.kd >= 0.0`.
+
+**Correspondence (Abstraction Function):**
+The mathematics of my PID controller can be matched to the above variables easily; `this.kp` is my current PID tuning constant, `this.ki` is my last involved state with PID function, `this.kd` is my predicted future PID tuning constant, `this.accumulatedError` is the area under the curve between `0` to the time the application was run; and, `this.previousError` contains the previous error used to calculate the derivative of the controlled variable.
 
 > To start making your kernel implementation, make a branch off of main in your
 > new repo called something like `kernel-implementation`. There are many ways to
@@ -142,7 +148,7 @@ Below is further rationale/explanation for the rubric items above:
 > rebase strategies described [here](https://stackoverflow.com/questions/35790561/working-while-waiting-for-pending-pr)
 > and [here](https://stackoverflow.com/questions/18021888/continue-working-on-a-git-branch-after-making-a-pull-request).
 
-<!-- TODO: make a new branch from main then delete this comment -->
+
 
 ## Assignment Tasks
 
@@ -161,9 +167,9 @@ below.
 The following sections detail everything that you should do once you've
 completed the assignment.
 
-### Changelog
 
-<!-- TODO: update CHANGELOG then delete this comment -->
+
+### Changelog
 
 At the end of every assignment, you should update the
 [CHANGELOG.md](../../CHANGELOG.md) file found in the root of the project folder.
@@ -249,7 +255,5 @@ PDF to read this rubric as a table).
 If you'd like to give feedback for this assignment (or any assignment, really),
 make use of [this survey][survey]. Your feedback helps make assignments
 better for future students.
-
-<!-- TODO: follow the link to share your feedback then delete this comment -->
 
 [survey]: https://forms.gle/dumXHo6A4Enucdkq9
