@@ -1,67 +1,54 @@
 package components.pidcontroller;
 
+import components.standard.Standard;
+
 /**
- * The Kernel Interface for the PID Controller.
+ * Core methods for a PID Controller. This kernel interface defines the basic
+ * mathematical model for the controller.
  *
  * @author Ken Ning
  */
-public interface PIDControllerKernel {
-
-    /*
-     * We temporarily remove 'extends Standard<PIDController>' to fix the
-     * hierarchy error. We define clear() manually instead.
-     */
+public interface PIDControllerKernel extends Standard<PIDController> {
 
     /**
-     * Resets the controller to its initial state (all gains and errors to 0).
-     *
-     * @updates this
-     * @ensures this is completely reset
-     */
-    void clear();
-
-    /**
-     * Sets the three main tuning parameters (Gains).
+     * Sets all three tuning values (gains) at the same time.
      *
      * @param p
-     *            The Proportional gain
+     *            the new Proportional value (Kp)
      * @param i
-     *            The Integral gain
+     *            the new Integral value (Ki)
      * @param d
-     *            The Derivative gain
-     * @updates this
-     * @requires p >= 0.0 and i >= 0.0 and d >= 0.0
+     *            the new Derivative value (Kd)
      */
     void setGains(double p, double i, double d);
 
     /**
-     * Calculates the control output based on the current system error.
+     * Calculates the machine adjustment needed based on the current mistake.
      *
-     * @param currentError
-     *            The gap between target and actual value
-     * @return The calculated action value
-     * @updates this
+     * @param error
+     *            the difference between our target and our current state
+     * @return the calculated output adjustment
      */
     double calculateOutput(double currentError);
 
     /**
-     * Reports the current Proportional (P) gain setting.
+     * Gets the current Proportional gain (Kp).
      *
-     * @return the kp value
+     * @return the Kp value
      */
     double getKp();
 
     /**
-     * Reports the current Integral (I) gain setting.
+     * Gets the current Integral gain (Ki).
      *
-     * @return the ki value
+     * @return the Ki value
      */
     double getKi();
 
     /**
-     * Reports the current Derivative (D) gain setting.
+     * Gets the current Derivative gain (Kd).
      *
-     * @return the kd value
+     * @return the Kd value
      */
     double getKd();
 }
