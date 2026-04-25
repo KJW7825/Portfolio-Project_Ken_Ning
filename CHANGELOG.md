@@ -6,6 +6,26 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
 and this project adheres to [Calendar Versioning](https://calver.org/) of
 the following form: YYYY.0M.0D.
 
+## 2026.04.24
+
+### Added
+
+- Designed and implemented a comprehensive JUnit test suite (`PIDController1Test.java`) for the PIDController component, covering all kernel and secondary methods.
+- Created `CruiseControlDemo.java` to showcase the controller's use in a direct vehicle speed simulation.
+- Created `SmartThermostat.java` to demonstrate the controller as a representation within a specialized hardware component.
+
+### Updated
+
+- Refined the `PIDControllerKernel` and `PIDController` interfaces to align with the final implementation methods (`setGains`, `calculateOutput`).
+- Updated Javadoc documentation across all files to use non-technical, easy-to-understand language as per OSU discipline.
+- Polished the codebase by replacing magic numbers with named constants to adhere to CheckStyle requirements.
+- Configured the project environment to support Java 21 for compatibility with the OSU Standard library.
+
+### Fixed
+
+- Resolved inheritance inconsistency issues between the kernel interface and the implementation classes.
+- Fixed dependency resolution for JUnit and Hamcrest libraries within the VSCode environment.
+
 ## 2026.04.15
 ### Added
 - Designed kernel implementation for PIDController component (`PIDController1.java`)

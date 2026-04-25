@@ -78,11 +78,7 @@ public class PIDController1 extends PIDControllerSecondary {
      * Standard methods -------------------------------------------------------
      */
 
-    /**
-     * Creates and returns a new object of the same type as this object.
-     *
-     * @return a brand new, empty controller
-     */
+    @Override
     public final PIDController newInstance() {
         try {
             // Build a completely new, empty copy of this exact same tool
@@ -99,13 +95,7 @@ public class PIDController1 extends PIDControllerSecondary {
         this.createNewRep();
     }
 
-    /**
-     * Steals all data from the source object, and then completely empties the
-     * source object so it becomes blank.
-     *
-     * @param source
-     *            the other controller we want to take data from
-     */
+    @Override
     public final void transferFrom(PIDController source) {
         // Check to make sure the source is a real thing, and not ourselves
         assert source != null : "Violation of: source is not null";

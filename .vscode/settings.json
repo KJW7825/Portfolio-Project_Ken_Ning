@@ -21,8 +21,9 @@
     ],
     "java.project.outputPath": "bin",
     "java.project.referencedLibraries": [
-        "lib/**/*.jar",
-        "/Users/kensmacbookair/Desktop/components.jar"
+        "/Users/kensmacbookair/Documents/GitHub/Portfolio-Project_Ken_Ning/lib/components.jar",
+        "/Users/kensmacbookair/Documents/GitHub/Portfolio-Project_Ken_Ning/lib/hamcrest-core-1.3.jar",
+        "/Users/kensmacbookair/Documents/GitHub/Portfolio-Project_Ken_Ning/lib/junit-4.13.2.jar"
     ],
     "java.saveActions.cleanup": true,
     "java.cleanup.actions": [

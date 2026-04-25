@@ -304,18 +304,18 @@ Take some time to fill them out honestly.
 > complete the portfolio project, how much better (or worse) do you think you
 > understand software development and why?
 
-<!-- TODO: discuss -->
+Through the portfolio project, I understand software development much better because it forced me to move beyond simple logic to architectural design. Designing a PID controller—a tool I frequently encounter in autonomous driving research—showed me how the mathematical models I study are translated into robust, reusable software components.
 
 > Also, did the portfolio project surface any gaps in your own knowledge of
 > software development. If so, what are those gaps and how did you address them?
 
-<!-- TODO: discuss -->
+Heritage Architecture project exposed weaknesses in my knowledge/awareness of complete multi-layer architecture and standards (Javadoc) and as a result, I used OSU Software Sequence discipline to address this issue by documenting my project to ensure it was not only functional but also adaptable/maintainable outside my own capability.
 
 > Finally, as a part of completing the portfolio project, to what extent has
 > your perspective of software development changed, if at all? In other words,
 > is software development something you still enjoy? If not, why not?
 
-<!-- TODO: discuss -->
+After gaining some experience with coding and seeing its value as a "discipline," I've come to find great joy in more than just writing software; I love applying my coding skills to engineering problems, specifically control systems, as it connects the abstract concepts of theoretical knowledge with real-world applications of that knowledge.
 
 > One of the challenges of completing the portfolio project is picking up a lot
 > of skills on your own. Some of these skills are, of course, software skills.
@@ -323,29 +323,42 @@ Take some time to fill them out honestly.
 > this process. Therefore, the first question is what skills did you pick up
 > through this process?
 
-<!-- TODO: discuss -->
+I learned how to design APIs, test code using Junit, and manage version control.
+
+Here's what I accomplished:
+
+Using Java, I designed a reusable PID controller that followed a layered software pattern.
+
+Using Junit, I created unit tests that guaranteed 100% reliability of the controller's logic.
+
+Applying the best practices of software engineering, such as Design-by-Contract and documenting code using Javadocs.
 
 > The follow-up question is: could you rephrase these skills you picked up
 > as bullet points that you could put on a resume? Try it below.
 
-<!-- TODO: discuss -->
+Software Architecture
+
+Automated Testing
+
+Technical Communication
+
+System Integration
 
 > Next, how has working on this project affected your career trajectory?
 > In other words, do you now hate the topic you picked? Or, are you even more
 > interested in it? Both outcomes are valuable to your personal development.
 
-<!-- TODO: discuss -->
+As I developed this project, I found that my experience has greatly increased my enthusiasm for autonomous vehicle technology and control systems. This experience has demonstrated to me how to work with both abstract software interfaces and concrete control fact levels (i.e., cruise control). By working on this project, I feel an even stronger commitment to make a career in the field of Autonomous Vehicles, and I have realised how critical it is that software engineering is performed to a rigorous level in order to develop successful engineering applications that produce high-performance. I am not bored with the subject; rather, I really look forward to working on a new project to attempt to port similar logic to a more hardware-oriented language (e.g., C++).
 
 > Finally, consider the skills you've picked up and your current career
 > trajectory. What are some things you could do to continue on your
 > career trajectory? Also, who are some mentors you could contact to help
 > you stay on your path?
 
-<!-- TODO: discuss -->
+I will advance my career trajectory by applying PID logic to complex CARLA simulations and studying Model Predictive Control (MPC). Additionally, I plan to seek ongoing mentorship from Mr. Guvenc and leverage industry connections to adopt professional engineering best practices.
 
 ### Changelog
 
-<!-- TODO: update CHANGELOG then delete this comment -->
 
 At the end of every assignment, you should update the
 [CHANGELOG.md](../../CHANGELOG.md) file found in the root of the project folder.
